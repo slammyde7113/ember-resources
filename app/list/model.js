@@ -4,5 +4,5 @@ export default DS.Model.extend({
   title: DS.attr('string'),
   hidden: DS.attr('boolean'),
   // stanleysAttr: DS.attr('string'),
-  // items: DS.attr('array')
+  items: DS.hasMany('item'),
 });
