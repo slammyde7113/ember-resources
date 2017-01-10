@@ -11,6 +11,9 @@ export default Ember.Component.extend({
     toggleItemDone (item){
       console.log("you're inside toggleDone in listr-list Component, and item is ", item);
       this.sendAction('toggleItemDone', item);
+    },
+    deleteItem (item) {
+      this.sendAction('deleteItem', item);
     }
   },
 });

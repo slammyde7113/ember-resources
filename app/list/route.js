@@ -11,5 +11,8 @@ export default Ember.Route.extend({
       console.log("inside 'list' route after toggle, and item is ", item.get('done'));
       item.save();
     },
+    deleteItem (item) {
+      item.destroyRecord();
+    },
   },
 });
