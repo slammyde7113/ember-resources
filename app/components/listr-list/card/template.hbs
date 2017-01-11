@@ -1,5 +1,6 @@
-{{#link-to 'list' list}}
-  <h4>
+<h4>
+  {{#link-to 'list' list}}
     {{list.title}}
-  </h4>
-{{/link-to}}
+  {{/link-to}}
+  <button class='btn btn-xs btn-default' {{action 'editList'}}>Edit</button>
+</h4>
