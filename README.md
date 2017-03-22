@@ -70,9 +70,9 @@ ember generate route lists
 ### Get and display list data from the listr-api
 
 1.  Generate a `list` model (for now, we'll leave items off)
-1.  Generate a `listr-list/card` component as the top-level interface to lists
-1.  Copy the list title display to `listr-list/card` (without any action)
-1.  Refactor the `lists` route template to use `listr-list/card`
+1.  Generate a `shopping-list/card` component as the top-level interface to lists
+1.  Copy the list title display to `shopping-list/card` (without any action)
+1.  Refactor the `lists` route template to use `shopping-list/card`
 1.  Refactor the `lists` route `model` method to use the ActiveModelAdapter
 
 ```sh
@@ -112,8 +112,8 @@ export default Ember.Route.extend({
 1.  Generate a route for a single list
 1.  Update `app/router.js` for the single list route
 1.  Add the `model` method to the `list` route
-1.  Invoke the `listr-list` component from the `list` route template
-1.  Link to the `list` route from the `listr-list/card` template
+1.  Invoke the `shopping-list` component from the `list` route template
+1.  Link to the `list` route from the `shopping-list/card` template
 
 ```sh
 ember generate model item content:string done:boolean list:belongs-to:list
@@ -209,14 +209,14 @@ pattern, which essentially means two things:
 
 ### Persist item changes to the API
 
-1.  In the `listr-list/item` component
+1.  In the `shopping-list/item` component
     1.  Make listItemCompleted a computed property alias of the item component
     1.  Change toggleDone to send that action up
-1.  In the `listr-list` component
-    1.  Add `toggleDone='toggleItemDone'` to invoking `listr-list/item`
+1.  In the `shopping-list` component
+    1.  Add `toggleDone='toggleItemDone'` to invoking `shopping-list/item`
     1.  Add the toggleItemDone action handler to send the action up
 1.  In the `list` route
-    1.  Add `toggleItemDone='toggleItemDone'` to invoking `listr-list`
+    1.  Add `toggleItemDone='toggleItemDone'` to invoking `shopping-list`
     1.  Add the toggleItemDone action to the route
 
 ```diff
@@ -263,25 +263,25 @@ pattern, which essentially means two things:
 
 ### Lab: Delete items on the API
 
-1.  In the `listr-list/item` component
+1.  In the `shopping-list/item` component
     1.  Add a button with text "Delete" and `{{action 'delete'}}`
     1.  Add a `delete` action to send that action up
-1.  In the `listr-list` component
-    1.  Add `delete='deleteItem'` to invoking `listr-list/item`
+1.  In the `shopping-list` component
+    1.  Add `delete='deleteItem'` to invoking `shopping-list/item`
     1.  Add the `deleteItem` action to send the action up
 1.  In the `list` route
-    1.  Add `deleteItem='deleteItem'` to invoking `listr-list`
+    1.  Add `deleteItem='deleteItem'` to invoking `shopping-list`
     1.  Add the deleteItem action to the route
 
 ### Create items on the API
 
-1.  In the `listr-list` component
+1.  In the `shopping-list` component
     1.  Add a form after `each` with `{{action "createItem" on="submit"}}`
     1.  Add an input to the form with `value=newItem.content`
     1.  Add a `newItem` property
     1.  Add the `createItem` action to send the action up
 1.  In the `list` route
-    1.  Add `createItem='createItem'` to invoking `listr-list`
+    1.  Add `createItem='createItem'` to invoking `shopping-list`
     1.  Add the createItem action to the route
 
 Does it work?
