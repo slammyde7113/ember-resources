@@ -9,5 +9,8 @@ export default Ember.Route.extend({
       item.toggleProperty('done');
       item.save();
     },
+    deleteItem(item) {
+      item.destroyRecord();
+    }
   },
 });
