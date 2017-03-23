@@ -27,5 +27,6 @@ export default Ember.Component.extend({
       this.sendAction('createItem', data);
       this.set('newItem.content', null);
     },
+
   },
 });
