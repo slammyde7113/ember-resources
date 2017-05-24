@@ -11,6 +11,11 @@ export default Ember.Route.extend({
       // actually make API req
       item.toggleProperty('done')
       item.save()
+    },
+    deleteItem (item) {
+      console.log('inside route layer item is :', item.get('done'));
+      // actually make API req
+      item.destroyRecord()
     }
   }
 });

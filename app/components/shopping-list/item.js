@@ -10,5 +10,8 @@ export default Ember.Component.extend({
       console.log('inside item Component, this.get item is:', this.get('item'));
       return this.sendAction('toggleDone', this.get('item'))
     },
+    delete () {
+      return this.sendAction('delete', this.get('item'))
+    }
   },
 });
