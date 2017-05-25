@@ -1,5 +1,8 @@
 <h2>Shoppr</h2>
 {{#each model as |list|}}
-  {{shopping-list/card list=list}}
+  {{shopping-list/card
+      list=list
+      editTitle='editTitle'
+              }}
 {{/each}}
 {{#link-to 'index'}}Home{{/link-to}}
