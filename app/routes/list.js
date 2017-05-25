@@ -9,13 +9,20 @@ export default Ember.Route.extend({
     toggleItemDone (item) {
       console.log('inside route layer item is :', item.get('done'));
       // actually make API req
-      item.toggleProperty('done')
-      item.save()
+      item.toggleProperty('done');
+      item.save();
     },
     deleteItem (item) {
       console.log('inside route layer item is :', item.get('done'));
       // actually make API req
-      item.destroyRecord()
+      item.destroyRecord();
+      // item.deleteRecord()
+      // item.save()
+    },
+    createItem (data) {
+      console.log('new data is :', data);
+      let itemRecord = this.get('store').createRecord('item', data);
+      itemRecord.save();
     }
   }
 });
